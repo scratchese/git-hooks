@@ -1,7 +1,7 @@
 {
   "name": "@amazingandyyy/git-hooks",
   "description": "Minimalism's pre-commit, pre-push hooks.",
-  "version": "0.0.9",
+  "version": "0.0.17",
   "author": {
     "name": "Andy Chen",
     "email": "amazingandyyy@gmail.com",
@@ -9,13 +9,9 @@
   },
   "scripts": {
     "test": "standard --fix",
-    "preuninstall": "node uninstall.js",
-    "install": "node install.js"
-  },
-  "bin": {
-    "install-git-hooks": "install.js"
-  },
-  "git-hooks": {
+    "install": "node install",
+    "preuninstall": "node uninstall",
+    "postinstall": "node install",
     "precommit": "npm run test"
   },
   "markdeck": {
@@ -55,7 +51,8 @@
     "install.js",
     "uninstall.js",
     "run.js",
-    "template.hook"
+    "hooks.js",
+    "hook"
   ],
   "dependencies": {}
 }

@@ -2,7 +2,7 @@
 const path = require('path')
 const { exec } = require('child_process')
 const cwd = process.cwd()
-const pkgJsonScript = require(path.join(cwd, 'package.json'))['git-hooks']
+const pkgJsonScript = require(path.join(cwd, 'package.json'))['scripts']
 
 const run = (filename) => {
   const script = filename.toString().split('-').join('')

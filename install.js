@@ -14,13 +14,15 @@ function isCI(env) {
 }
 
 function installHook (hook) {
-  const source = path.join(__dirname, 'template.hook')
+  const source = path.join(__dirname, 'hook')
   const target = path.join('.git', 'hooks', hook)
-  if(isCI(process.env)){
-    console.log('[git-hooks]', 'CI Environment detected, skip the git-hooks installation')
-  }else{
-    fs.copyFileSync(source, target, 'utf-8');
-    fs.chmodSync(target, 0o0755);
+  if(fs.existsSync(source) && fs.existsSync('.git')){
+    if(isCI(process.env)){
+      console.log('[git-hooks]', 'CI Environment detected, skip the git-hooks installation')
+    } else {
+      fs.copyFileSync(source, target, 'utf-8');
+      fs.chmodSync(target, 0o0755);
+    }
   }
 };
 
