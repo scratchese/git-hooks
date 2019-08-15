@@ -12,12 +12,6 @@
     "precommit": "npm run test",
     "postinstall": "git-hooks-install"
   },
-  "lint-staged": {
-    "*.js": [
-      "npm run test",
-      "git add"
-    ]
-  },
   "markdeck": {
     "url": "https://github.com/amazingandyyy/git-hooks/tree/master/docs"
   },
@@ -39,7 +33,6 @@
     "url": "git://github.com/amazingandyyy/git-hooks.git"
   },
   "devDependencies": {
-    "lint-staged": "^9.2.1",
     "standard": "*"
   },
   "files": [
