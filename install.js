@@ -1,19 +1,27 @@
 #!/usr/bin/env node
 
 const path = require('path')
-const { exec } = require('child_process')
+const fs = require('fs')
+const HOOKS = require('./hooks');
 
-const HOOKS = [
-  'pre-commit',
-  'pre-push'
-]
+function isCI(env) {
+  // copy from https://github.com/watson/ci-info/blob/2012259979fc38517f8e3fc74daff714251b554d/index.js#L52
+  return env.CI || // Travis CI, CircleCI, Cirrus CI, Gitlab CI, Appveyor, CodeShip, dsari
+  env.CONTINUOUS_INTEGRATION || // Travis CI, Cirrus CI
+  env.BUILD_NUMBER || // Jenkins, TeamCity
+  env.RUN_ID || // TaskCluster, dsari
+  false;
+}
 
 function installHook (hook) {
-  const source = path.join('node_modules', '@amazingandyyy', 'git-hooks', 'template.hook')
+  const source = path.join(__dirname, 'template.hook')
   const target = path.join('.git', 'hooks', hook)
-  exec(`cp -f ${source} ${target}`, () => {
-    exec(`chmod 755 ${target}`)
-  })
+  if(isCI(process.env)){
+    console.log('[git-hooks]', 'CI Environment detected, skip the git-hooks installation')
+  }else{
+    fs.copyFileSync(source, target, 'utf-8');
+    fs.chmodSync(target, 0o0755);
+  }
 };
 
 HOOKS.forEach(installHook)

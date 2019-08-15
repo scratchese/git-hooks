@@ -1,4 +1,6 @@
 #!/bin/sh
+# git-hooks: this file is created by git-hooks
+# https://github.com/amazingandyyy/git-hooks
 
 CURRENT_NAME=`basename $0`
 
@@ -7,3 +9,5 @@ if [ -f "node_modules/@amazingandyyy/git-hooks/run.js" ]; then
 else
   node run.js $CURRENT_NAME
 fi;
+
+# This is the end of the file

@@ -36,6 +36,14 @@ package.json
 }
 ```
 
+## Uninstallation
+
+```shell
+$ npm uninstall @amazingandyyy/git-hooks
+# or
+$ yarn remove @amazingandyyy/git-hooks
+```
+
 ## License
 
 MIT
