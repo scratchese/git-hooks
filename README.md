@@ -1,5 +1,5 @@
 <h1 align="center">
-🗜️ git-hooks
+⚓ git-hooks
 </h1>
 <p align="center">
 Minimalism's pre-commit, pre-push hooks.
