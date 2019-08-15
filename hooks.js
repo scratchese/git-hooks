@@ -1,6 +1,6 @@
 const HOOKS = [
-    'pre-commit',
-    'pre-push'
+  'pre-commit',
+  'pre-push'
 ]
 
-module.exports = HOOKS;
+module.exports = HOOKS
