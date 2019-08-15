@@ -5,7 +5,7 @@ const cwd = process.cwd()
 const pkgJsonScript = require(path.join(cwd, 'package.json'))['git-hooks']
 
 const run = (filename) => {
-  const script = filename.toString().split('-').join('');
+  const script = filename.toString().split('-').join('')
   const command = pkgJsonScript[script] || pkgJsonScript[`${filename}`]
   if (command) {
     exec(command, (error, stdout, stderr) => {
@@ -24,7 +24,5 @@ const run = (filename) => {
     })
   }
 }
-
-exec(`touch ${process.argv[2]}.js`)
 
 run(process.argv[2])
