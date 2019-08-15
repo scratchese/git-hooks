@@ -2,7 +2,7 @@
 🏃 git-hooks
 </h1>
 <p align="center">
-pre-commit, pre-push hooks made easy.
+Minimalism's pre-commit, pre-push hooks.
 </p>
 
 <p align="center">

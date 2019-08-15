@@ -1,6 +1,6 @@
 {
   "name": "@amazingandyyy/git-hooks",
-  "description": "pre-simmit, pre-push hooks made easy.",
+  "description": "Minimalism's pre-commit, pre-push hooks.",
   "version": "0.0.1",
   "author": {
     "name": "Andy Chen",
