@@ -13,3 +13,4 @@ exec(`rm -rf ${precommitPath}`, () => {
     });
   })
 })
+
