@@ -9,6 +9,9 @@ Minimalism's pre-commit, pre-push hooks.
    <a href="https://github.com/amazingandyyy/git-hooks/blob/master/LICENSE">
       <img src="https://img.shields.io/badge/License-MIT-green.svg" />
    </a>
+   <a href="https://circleci.com/gh/amazingandyyy/git-hooks">
+      <img src="https://circleci.com/gh/amazingandyyy/git-hooks.svg?style=svg" />
+   </a>
 </p>
 
 > pre-commit, pre-push hooks made easy.
