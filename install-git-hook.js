@@ -1,7 +1,14 @@
 #!/usr/bin/env node
+
 const path = require('path')
 const { exec } = require('child_process')
-const precommitSrc=path.join(__dirname, 'hooks', 'pre-commit.hook')
-const precommitPath=path.join('.git', 'hooks', 'pre-commit')
-// const prepushPath = path.join('.git', 'hooks', 'pre-push')
-exec(`cp -f ${precommitSrc} ${precommitPath}`);
+
+function installHook(action) {
+    const source = path.join(__dirname, 'hooks', `${action}.hook`);
+    const target = path.join('.git', 'hooks', action);
+    exec(`cp -f ${source} ${target}`, () => {
+        exec(`chmod ${target}`)
+    })
+}
+
+installHook('pre-commit')
