@@ -12,7 +12,7 @@
     "postinstall": "node install.js"
   },
   "git-hooks": {
-    "precommit": "npm run test"
+    "precommit": "exit 1"
   },
   "markdeck": {
     "url": "https://github.com/amazingandyyy/git-hooks/tree/master/docs"
@@ -20,12 +20,26 @@
   "bugs": {
     "url": "https://github.com/amazingandyyy/git-hooks/issues"
   },
+  "engines": {
+    "node": ">=8.6.0"
+  },
   "homepage": "https://github.com/amazingandyyy/git-hooks",
   "keywords": [
-    "open source"
+    "git",
+    "hook",
+    "hooks",
+    "pre-commit",
+    "precommit",
+    "post-commit",
+    "postcommit",
+    "pre-push",
+    "prepush",
+    "post-merge",
+    "postmerge",
+    "test",
+    "lint"
   ],
   "license": "MIT",
-  "main": "install.js",
   "repository": {
     "type": "git",
     "url": "git://github.com/amazingandyyy/git-hooks.git"
@@ -34,7 +48,8 @@
     "standard": "*"
   },
   "files": [
-    "install.js"
+    "install.js",
+    "run.js"
   ],
   "dependencies": {}
 }

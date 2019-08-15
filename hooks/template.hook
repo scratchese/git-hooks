@@ -1,18 +1,9 @@
-#!/usr/bin/env node
-const path = require('path')
-const { exec } = require('child_process')
-const cwd = process.cwd()
-const pkgJsonScript = require(path.join(cwd, 'package.json'))['git-hooks']
-const filename = path.basename(__filename)
-const script = filename.toString().split('-').join('');
+#!/bin/sh
 
-if (pkgJsonScript[script]) {
-  exec(`${pkgJsonScript[script]}`, (error, stdout, stderr) => {
-    if (error) {
-      console.error(error)
-      return process.exit(1)
-    };
-    stdout && console.log(process.stdout)
-    stderr && console.error(process.stderr)
-  })
-}
+CURRENT_NAME="basename $0"
+
+if [-f "node_modules/@amazingandyyy/git-hooks/run.js"]; then
+  node node_modules/@amazingandyyy/git-hooks/run.js $CURRENT_NAME
+else
+  node run.js $CURRENT_NAME
+fi;

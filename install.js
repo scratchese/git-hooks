@@ -17,3 +17,5 @@ function installHook (hook) {
 };
 
 HOOKS.forEach(installHook)
+
+
