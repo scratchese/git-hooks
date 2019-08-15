@@ -16,4 +16,3 @@ if (pkgJsonScript[script]) {
     stderr && console.error(process.stderr)
   })
 }
-
