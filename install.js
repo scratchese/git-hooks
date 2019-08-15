@@ -15,11 +15,11 @@ function isCI (env) {
 
 function installHook (hook) {
   const source = path.join(__dirname, 'hook')
-  
+
   // in the postinstall stage
   // process.cwd() === __dirname
   // so we need to jump up three level here
-  const root = path.join(__dirname, '../../..');
+  const root = path.join(__dirname, '../../..')
   const target = path.join(root, '.git', 'hooks', hook)
 
   if (fs.existsSync(source) && fs.existsSync(path.join(root, '.git'))) {

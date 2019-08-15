@@ -6,7 +6,7 @@ const HOOKS = require('./hooks')
 // in the preuninstall stage
 // process.cwd() === __dirname
 // so we need to jump up three level here
-const root = path.join(__dirname, '../../..');
+const root = path.join(__dirname, '../../..')
 const hookPathList = HOOKS.map(hook => path.join(root, '.git', 'hooks', hook))
 
 const generatedByGitHooks = '# git-hooks'
