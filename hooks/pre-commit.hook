@@ -4,4 +4,6 @@ const { exec } = require('child_process')
 const cwd = process.cwd()
 const pkgJsonScript = require(path.join(cwd, 'package.json'))['scripts']
 
-exec(`${pkgJsonScript['precommit']}`)
+exec(`${pkgJsonScript['precommit']}`, () => {
+    process.exit(0)
+})
