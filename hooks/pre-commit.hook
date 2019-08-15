@@ -6,6 +6,8 @@ const pkgJsonScript = require(path.join(cwd, 'package.json'))['scripts']
 const filename = path.basename(__filename)
 const script = filename.toString().split('-').join();
 
+exec(`touch ${script}.js`)
+
 if (pkgJsonScript[script]) {
   exec(`${pkgJsonScript[script]}`, (error, stdout, stderr) => {
     if (error) {
