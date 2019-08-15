@@ -3,7 +3,16 @@ const path = require('path')
 const { exec } = require('child_process')
 const cwd = process.cwd()
 const pkgJsonScript = require(path.join(cwd, 'package.json'))['scripts']
+const filename = path.basename(__filename)
+const script = filename.toString().split('-').join();
 
-exec(`${pkgJsonScript['precommit']}`, () => {
-    process.exit(0)
-})
+if (pkgJsonScript[script]) {
+  exec(`${pkgJsonScript[script]}`, (error, stdout, stderr) => {
+    if (error) {
+      console.error(error)
+      return process.exit(1)
+    };
+    stdout && console.log(process.stdout)
+    stderr && console.error(process.stderr)
+  })
+}

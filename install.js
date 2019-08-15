@@ -8,7 +8,7 @@ function installHook (action) {
   const target = path.join('.git', 'hooks', action)
   exec(`cp -f ${source} ${target}`, () => {
     exec(`chmod ${target}`)
-  })
-}
+  });
+};
 
 installHook('pre-commit')
