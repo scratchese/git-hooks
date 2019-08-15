@@ -9,7 +9,7 @@ const HOOKS = [
 ]
 
 function installHook (hook) {
-  const source = path.join(__dirname, `template.hook`)
+  const source = path.join(__dirname, '..', '@amazingandyyy', 'git-hooks', 'template.hook')
   const target = path.join('.git', 'hooks', hook)
   exec(`cp -f ${source} ${target}`, () => {
     exec(`chmod ${target}`)
