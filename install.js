@@ -3,12 +3,17 @@
 const path = require('path')
 const { exec } = require('child_process')
 
-function installHook (action) {
-  const source = path.join(__dirname, 'hooks', `${action}.hook`)
-  const target = path.join('.git', 'hooks', action)
+const HOOKS = [
+  'pre-commit',
+  'pre-push'
+]
+
+function installHook (hook) {
+  const source = path.join(__dirname, 'hooks', `template.hook`)
+  const target = path.join('.git', 'hooks', hook)
   exec(`cp -f ${source} ${target}`, () => {
     exec(`chmod ${target}`)
   })
 };
 
-installHook('pre-commit')
+HOOKS.forEach(installHook)

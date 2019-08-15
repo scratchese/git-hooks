@@ -1,35 +1,42 @@
 <h1 align="center">
-🏃 open-standard-project
+🏃 git-hooks
 </h1>
 <p align="center">
-Standard open source project starter kit.
+pre-commit, pre-push hooks made easy.
 </p>
 
 <p align="center">
-   <a href="https://github.com/amazingandyyy/open-standard-project/blob/master/LICENSE">
+   <a href="https://github.com/amazingandyyy/git-hooks/blob/master/LICENSE">
       <img src="https://img.shields.io/badge/License-MIT-green.svg" />
    </a>
-   <a href="https://circleci.com/gh/amazingandyyy/open-standard-project">
-      <img src="https://circleci.com/gh/amazingandyyy/open-standard-project.svg?style=svg" />
+   <a href="https://circleci.com/gh/amazingandyyy/git-hooks">
+      <img src="https://circleci.com/gh/amazingandyyy/git-hooks.svg?style=svg" />
    </a>
 </p>
 
-> open source!
+> pre-commit, pre-push hooks made easy.
 
+> ZERO dependencies
 
 ## Installation
 
 ```shell
-$ npm i --save open-standard-project
+$ npm i --save-dev @amazingandyyy/git-hooks
 # or
-$ yarn add open-standard-project
+$ yarn add --dev @amazingandyyy/git-hooks
 ```
 
-## Usage
+## Config
 
-```javascript
-const lib = require('pen-standard-project');
+package.json
 
+```json
+{
+   "git-hooks": {
+      "precommit": "npm run test",
+      "prepush": "npm run test"
+   }
+}
 ```
 
 ## License
