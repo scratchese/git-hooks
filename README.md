@@ -29,7 +29,8 @@ package.json
 
 ```json
 {
-   "git-hooks": {
+   "scripts": {
+      "test": "jest",
       "precommit": "npm run test",
       "prepush": "npm run test"
    }
