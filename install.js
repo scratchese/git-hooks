@@ -12,4 +12,4 @@ exec(`rm -rf ${precommitPath}`, () => {
       exec(`echo ${pkgJsonScript['precommit']} >> ${precommitPath}`)
     });
   });
-});
+})
