@@ -10,7 +10,7 @@
   "scripts": {
     "test": "standard --fix",
     "precommit": "npm run test",
-    "postinstall": "git-hooks-install"
+    "postinstall": "node install.js"
   },
   "markdeck": {
     "url": "https://github.com/amazingandyyy/git-hooks/tree/master/docs"
