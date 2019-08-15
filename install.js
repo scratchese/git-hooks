@@ -15,8 +15,14 @@ function isCI (env) {
 
 function installHook (hook) {
   const source = path.join(__dirname, 'hook')
-  const target = path.join('.git', 'hooks', hook)
-  if (fs.existsSync(source) && fs.existsSync('.git')) {
+  
+  // in the postinstall stage
+  // process.cwd() === __dirname
+  // so we need to jump up three level here
+  const root = path.join(__dirname, '../../..');
+  const target = path.join(root, '.git', 'hooks', hook)
+
+  if (fs.existsSync(source) && fs.existsSync(path.join(root, '.git'))) {
     if (isCI(process.env)) {
       console.log('[git-hooks]', 'CI Environment detected, skip the git-hooks installation')
     } else {
