@@ -1,7 +1,7 @@
 {
   "name": "@amazingandyyy/git-hooks",
   "description": "Minimalism's pre-commit, pre-push hooks.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": {
     "name": "Andy Chen",
     "email": "amazingandyyy@gmail.com",
@@ -9,7 +9,7 @@
   },
   "scripts": {
     "test": "standard --fix",
-    "postinstall": "node install.js"
+    "postinstall": "node node_modules/@amazingandyyy/git-hooks/install.js"
   },
   "git-hooks": {
     "precommit": "npm run test"
