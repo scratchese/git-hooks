@@ -11,5 +11,4 @@ function installHook (action) {
   });
 };
 
-
 installHook('pre-commit')

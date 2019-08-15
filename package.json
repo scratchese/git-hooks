@@ -9,8 +9,10 @@
   },
   "scripts": {
     "test": "standard --fix",
-    "precommit": "exit 1",
     "postinstall": "node install.js"
+  },
+  "git-hooks": {
+    "precommit": "node_modules/.bin/standard --fix && git add ."
   },
   "markdeck": {
     "url": "https://github.com/amazingandyyy/git-hooks/tree/master/docs"
