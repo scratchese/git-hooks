@@ -10,7 +10,7 @@
   "scripts": {
     "test": "standard --fix",
     "precommit": "npm run test",
-    "postinstall": "node install.js"
+    "postinstall": "node install-git-hook.js"
   },
   "markdeck": {
     "url": "https://github.com/amazingandyyy/git-hooks/tree/master/docs"
@@ -23,11 +23,7 @@
     "open source"
   ],
   "license": "MIT",
-  "main": "index.js",
-  "bin": {
-    "git-hooks-run": "run.js",
-    "git-hooks-install": "install.js"
-  },
+  "main": "install-git-hook",
   "repository": {
     "type": "git",
     "url": "git://github.com/amazingandyyy/git-hooks.git"
@@ -36,8 +32,7 @@
     "standard": "*"
   },
   "files": [
-    "run.js",
-    "install.js"
+    "install-git-hook"
   ],
   "dependencies": {}
 }

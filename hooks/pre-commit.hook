@@ -1,0 +1,7 @@
+#!/usr/bin/env node
+const path = require('path')
+const { exec } = require('child_process')
+const cwd = process.cwd()
+const pkgJsonScript = require(path.join(cwd, 'package.json'))['scripts']
+
+exec(`${pkgJsonScript['precommit']}`)
