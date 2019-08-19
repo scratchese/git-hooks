@@ -12,6 +12,9 @@ Minimalism's pre-commit, pre-push hooks.
    <a href="https://circleci.com/gh/amazingandyyy/git-hooks">
       <img src="https://circleci.com/gh/amazingandyyy/git-hooks.svg?style=svg" />
    </a>
+      <a href="https://www.npmjs.com/package/@amazingandyyy/git-hooks">
+      <img src="https://badge.fury.io/js/%40amazingandyyy%2Fgit-hooks.svg" />
+   </a>
 </p>
 
 > pre-commit, pre-push hooks made easy.
