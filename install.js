@@ -26,7 +26,7 @@ function installHook (hook) {
     if (isCI(process.env)) {
       console.log('[git-hooks]', 'CI Environment detected, skip the git-hooks installation')
     } else {
-      fs.copyFileSync(source, target, 'utf-8')
+      fs.copyFileSync(source, target)
       fs.chmodSync(target, 0o0755)
     }
   }
